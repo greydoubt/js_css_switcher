@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Style Picker</title>
+  <style id="color-scheme">
+    /* Default color scheme */
+    :root {
+      --primary-color: #22212C;
+      --secondary-color: #454158;
+      --accent-color: #9580FF;
+      --text-color: #22212C;
+      --background-color: #454158;
+      --font-color: #FFFFFF;
+      --success-color: #8AFF80;
+      --error-color: #FF5555;
+    }
+    
+    /* Rest of your CSS styles */
+    body {
+      background-color: var(--background-color);
+      color: var(--font-color);
+      font-family: Arial, sans-serif;
+    }
+    
+    /* Add more styles as needed */
+  </style>
+</head>
+<body>
+  <h1>Color Scheme Picker</h1>
+  
+  <!-- Button to switch color scheme -->
+  <button onclick="switchColorScheme()">Switch Color Scheme</button>
+  
+  <!-- Rest of your HTML content -->
+  <p>This is a sample paragraph.</p>
+  
+  <!-- JavaScript code -->
+  <script>
+    function switchColorScheme() {
+      var colorScheme = document.getElementById('color-scheme');
+      
+      // Check the current color scheme
+      if (colorScheme.getAttribute('data-color-scheme') === 'scheme1') {
+        // Switch to the second color scheme
+        colorScheme.setAttribute('data-color-scheme', 'scheme2');
+        colorScheme.style.setProperty('--primary-color', '#2A212C');
+        colorScheme.style.setProperty('--secondary-color', '#544158');
+        colorScheme.style.setProperty('--accent-color', '#FF80BF');
+        colorScheme.style.setProperty('--text-color', '#2A212C');
+        colorScheme.style.setProperty('--background-color', '#544158');
+      } else {
+        // Switch to the first color scheme (default)
+        colorScheme.setAttribute('data-color-scheme', 'scheme1');
+        colorScheme.style.setProperty('--primary-color', '#22212C');
+        colorScheme.style.setProperty('--secondary-color', '#454158');
+        colorScheme.style.setProperty('--accent-color', '#9580FF');
+        colorScheme.style.setProperty('--text-color', '#22212C');
+        colorScheme.style.setProperty('--background-color', '#454158');
+      }
+    }
+  </script>
+</body>
+</html>
